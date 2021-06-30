@@ -1,13 +1,10 @@
-import react from 'react'
+import { Link } from 'react-router-dom'
 
-/*export default props => 
+export default props => 
  
-    <a href="#/">
-        <i className={`fa fa-${props.icon}`}></i> {`${props.title}`}
-    </a>
-    <a href="#/users">
-        <i className={`fa fa-${props.icon2}`}></i> {`${props.title2}`}
-    </a>
-           */ 
+<Link to={props.navigateTo}>
+    <i className={`fa fa-${props.faClass}`}></i> {props.name}
+</Link>
+           
 
 

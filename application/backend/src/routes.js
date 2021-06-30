@@ -8,6 +8,7 @@ const routes = express.Router();
 
 routes.post('/users', UserController.store);
 routes.get('/users', UserController.index);
+routes.delete('/users/:id/', UserController.delete);
 
 // routes.post('/users/:user_id/addresses', AdressController.store)
 // routes.get('/users/:user_id/addresses', AdressController.index)

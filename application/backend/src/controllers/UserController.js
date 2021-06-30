@@ -1,3 +1,4 @@
+const { findByPk } = require('../models/User');
 const User = require('../models/User');
 
 module.exports = {
@@ -16,5 +17,14 @@ module.exports = {
         })
 
         return res.json(user);
-}
+    },
+
+    async delete (req, res) {
+        await User.destroy({
+            where: { 
+                id: req.params.id
+            }
+        })
+        return res.json("Usuário deletado")
+    }
 }
