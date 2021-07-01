@@ -1,6 +1,6 @@
 const express = require('express');
 const UserController = require('./controllers/UserController')
-// const AdressController = require('./controllers/AddressController')
+const EstablishmentController = require('./controllers/EstablishmentController')
 // const TechController = require('./controllers/TechController')
 // const ReportController = require('./controllers/ReportController')
 
@@ -10,11 +10,11 @@ routes.post('/users', UserController.store);
 routes.get('/users', UserController.index);
 routes.delete('/users/:id/', UserController.delete);
 
-// routes.post('/users/:user_id/addresses', AdressController.store)
-// routes.get('/users/:user_id/addresses', AdressController.index)
+routes.post('/users/:user_id/establishments', EstablishmentController.store)
+routes.get('/users/:user_id/establishments', EstablishmentController.index)
 
-// routes.get('/users/:user_id/techs', TechController.index)
-// routes.post('/users/:user_id/techs', TechController.store)
+//routes.post('/items/:user_id/techs', TechController.store)
+// routes.get('/establishments/:', TechController.index)
 // routes.delete('/users/:user_id/techs', TechController.delete)
 
 // routes.get('/report', ReportController.show)
