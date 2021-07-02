@@ -2,17 +2,20 @@ const Sequelize = require('sequelize');
 const dbConfig = require('../config/database')
 
 const User = require('../models/User');
-// const Address = require('../models/Address');
+const Establishment = require('../models/Establishment');
+const Item = require('../models/Item');
 // const Tech = require('../models/Tech');
 
 const connection = new Sequelize(dbConfig);
 
 User.init(connection);
-// Address.init(connection);
+Establishment.init(connection);
+Item.init(connection)
 // Tech.init(connection)
 
-// Address.associate(connection.models);
-// User.associate(connection.models);
+Establishment.associate(connection.models);
+User.associate(connection.models);
+Item.associate(connection.models);
 // Tech.associate(connection.models);
 
 
