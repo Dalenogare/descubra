@@ -1,61 +1,58 @@
-// const Tech = require('../models/Tech');
-// const User = require('../models/User');
+const Establishment = require ('../models/Establishment')
+const Item = require ('../models/Item')
 
-// module.exports = {
-//     async index(req, res) {
-//         const { user_id } = req.params;
+module.exports = {
+    
+    async index(req, res) {
+        const items = await Item.findAll();
+        return res.json(items);
+    },
 
-//         const user = await User.findByPk(user_id, {
-//             include: { association: 'techs' }
-//         });
+    async establishmentItems(req, res) {
+        const { establishment_id } = req.params;
 
-//         if (!user) {
-//             return res.status(400).json({ error: 'User not found' });
-//         }
+        const establishment = await Establishment.findByPk(establishment_id, {
+            include: { association: 'items' }
+        });
 
-//         if(user.techs.length == 0) {
-//             return res.json(`Este usuário não possui tecnologias: ${user.techs.length}`);
-//         }
+        if (!establishment) {
+            return res.status(400).json({ error: 'User not found' });
+        }
 
-//         return res.json(user.techs)
+        if(establishment.items.length == 0) {
+            return res.json('Este usuário não possui items: ');
+        }
 
-//     },
+        return res.json(establishment.items)
 
-//     async store(req, res) {
-//         const { user_id } = req.params;
-//         const { name } = req.body;
+    },
 
-//         const user = await User.findByPk(user_id)
+    async store(req, res) {
+        const { establishment_id } = req.params;
+        const { name, description, value } = req.body;
+
+        const establishment = await Establishment.findByPk(establishment_id)
         
-//         if (!user) {
-//             return res.status(400).json({ error: 'User not found' });
-//         }
+        if (!establishment) {
+            return res.status(400).json({ error: 'Establishment not found' });
+        }
 
-//         const [ tech ] = await Tech.findOrCreate({
-//             where: { name }
-//         });
+        const item = await Item.create({
+            name,
+            description,
+            value,
+            establishment_id
+        });
 
-//         await user.addTech(tech)
+        return res.json(item);
+    },
 
-//         return res.json(tech);
-//     },
-
-//     async delete(req, res) {
-//         const { user_id } = req.params;
-//         const { name } = req.body;
-
-//         const user = await User.findByPk(user_id)
-
-//         if (!user) {
-//             return res.status(400).json({ error: 'User not found' });
-//         }
-
-//         const tech = await Tech.findOne({
-//             where: { name }
-//         });
-
-//         await user.removeTech(tech);
-
-//         return res.json();
-//     }
-// }
+    async delete(req, res) {
+        await Item.destroy({
+            where: { 
+                id: req.params.id
+            }
+        })
+        return res.json("Item deletado")
+    }
+}

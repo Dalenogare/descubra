@@ -10,10 +10,12 @@ const connection = new Sequelize(dbConfig);
 
 User.init(connection);
 Establishment.init(connection);
+Item.init(connection)
 // Tech.init(connection)
 
 Establishment.associate(connection.models);
 User.associate(connection.models);
+Item.associate(connection.models);
 // Tech.associate(connection.models);
 
 

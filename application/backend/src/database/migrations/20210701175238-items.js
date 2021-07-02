@@ -9,10 +9,10 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      menu_id: {
+      establishment_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'menus', key: 'id' },
+        references: { model: 'establishments', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
@@ -28,10 +28,18 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
   });
   },
 
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface) => {
     return queryInterface.dropTable('items');
   }
 };

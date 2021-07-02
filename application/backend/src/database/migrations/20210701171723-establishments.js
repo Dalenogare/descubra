@@ -16,7 +16,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      regNumber: {
+      register_number: {
         type: Sequelize.STRING,
         allowNull: false,
       },

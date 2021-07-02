@@ -12,7 +12,7 @@ class User extends Model {
     }
 
     static associate(models) {
-        this.hasOne(models.Establishment, {foreignKey: 'user_ud', as: 'establishment'})
+        this.hasOne(models.Establishment, {foreignKey: 'user_id', as: 'establishment'})
     }
 }
 

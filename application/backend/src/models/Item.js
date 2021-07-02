@@ -12,7 +12,7 @@ class Item extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.Establishment, { foreignKey: 'establishment_id', through: 'menus', as: 'establishment' });
+        this.belongsTo(models.Establishment, { foreignKey: 'establishment_id', as: 'establishment' });
     }
 }
 

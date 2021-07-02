@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize')
 class Establishment extends Model {
     static init(sequelize) {
         super.init({
-            regNumber: DataTypes.STRING,
+            register_number: DataTypes.STRING,
             name: DataTypes.STRING,
             zipcode: DataTypes.STRING,
             state: DataTypes.STRING,
@@ -16,7 +16,7 @@ class Establishment extends Model {
 
     static associate(models) {
         this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' })
-        this.belongsTo(models.Item, { foreignKey: 'establishment_id', through: 'menus', as: 'item' });
+        this.hasMany(models.Item, { foreignKey: 'establishment_id',  as: 'items' });
     }
 }
 
