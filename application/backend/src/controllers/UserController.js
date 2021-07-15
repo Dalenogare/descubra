@@ -9,8 +9,8 @@ module.exports = {
     async store(req, res) {
         const { name, email, password } = req.body;
 
-        const user = await User.create({ 
-            name, 
+        const user = await User.create({
+            name,
             email,
             password
         })
@@ -18,9 +18,21 @@ module.exports = {
         return res.json(user);
     },
 
-    async delete (req, res) {
+    async indexByEmail(req, res) {
+        const user = await User.findOne({
+            where: {
+                email: req.params.email
+            }
+        });
+        if (!user) {
+            return res.json("")
+        }
+        return res.json(user);
+    },
+
+    async delete(req, res) {
         await User.destroy({
-            where: { 
+            where: {
                 id: req.params.id
             }
         })
