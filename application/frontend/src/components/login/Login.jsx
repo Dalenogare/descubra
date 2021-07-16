@@ -129,7 +129,7 @@ export default function Login({ setToken }) {
                     </div>
                 </div>
             </div>
-            <div class="image">
+            <div className="image">
                 <img src={terry} alt="" />
             </div>
         </div>
