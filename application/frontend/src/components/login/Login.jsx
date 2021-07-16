@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import PropTypes from 'prop-types';
 import axios from 'axios'
+import terry from '../../assets/imgs/terry.png'
 
 let login = true
 
@@ -37,7 +38,7 @@ export default function Login({ setToken }) {
         }
 
         else if (user.password != password) {
-            alert('Senha incorreta seu animal de teta')
+            alert('Senha incorreta')
         }
 
         else {
@@ -47,6 +48,7 @@ export default function Login({ setToken }) {
                 password
             });
             setToken(token);
+            alert('Login efetuado com sucesso')
         }
     }
 
@@ -67,66 +69,72 @@ export default function Login({ setToken }) {
     }
 
     const changeDisplay = e => {
-        if (login) {
-            var element = document.getElementById("login")
-            element.classList.add("d-none")
-            var element = document.getElementById("register")
-            element.classList.remove("d-none")
-            login = !login
-        }
+        
+        const loginElement = document.getElementById("login")
+        login ? loginElement.classList.add("d-none") : loginElement.classList.remove("d-none")
+        login ? loginElement.classList.remove("anim") : loginElement.classList.add("anim")
 
-        else {
-            var element = document.getElementById("login")
-            element.classList.remove("d-none")
-            var element = document.getElementById("register")
-            element.classList.add("d-none")
-            login = !login
-        }
+        const registerElement = document.getElementById("register")
+        login ? registerElement.classList.remove("d-none") : registerElement.classList.add("d-none")
+        login ? registerElement.classList.add("anim") : registerElement.classList.remove("anim")
+
+        login = !login
     }
 
-        return (
-            <div>
-                <div className="login-wrapper" id="login">
-                    <h1>Please login</h1>
-                    <form>
-                        <label>
-                            <p>Email</p>
-                            <input type="text" onChange={(e) => setEmail(e.target.value)} />
-                        </label>
-                        <label>
-                            <p>Password</p>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                        </label>
-                        <div>
-                            <button type="button" onClick={e => handleSubmit(e)}>Submit</button>
+    return (
+        <div class="page anim">
+            <div class="loginContent">
+                <div className="wrapper anim" id="test">
+                    <div className="login-wrapper anim" id="login">
+                        <form>
+                            <h1 className="mb-5 loginText">Entrar</h1>
+                            <label className="mb-3">
+                                <p className="mb-1 loginText">Email</p>
+                                <input className="w-100" type="text" placeholder="Digite seu email"
+                                    onChange={(e) => setEmail(e.target.value)} />
+                            </label>
+                            <label className="mb-3">
+                                <p className="mb-1 loginText">Senha</p>
+                                <input className="w-100" type="password" placeholder="Digite sua senha"
+                                    onChange={(e) => setPassword(e.target.value)} />
+                            </label>
                             <button type="button" onClick={e => changeDisplay(e)}>Registrar</button>
-                        </div>
-                    </form>
-                </div>
-                <div className="login-wrapper d-none" id="register">
-                    <h1>Please Register</h1>
-                    <form onSubmit={handleRegister}>
-                        <label>
-                            <p>Nome</p>
-                            <input type="name" onChange={(e) => setUserName(e.target.value)} />
-                        </label>
-                        <label>
-                            <p>Email</p>
-                            <input type="email" onChange={(e) => setEmail(e.target.value)} />
-                        </label>
-                        <label>
-                            <p>Password</p>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                        </label>
-                        <div>
-                            <button type="submit">Registrar</button>
+                            <button className="submit" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
+                        </form>
+                    </div>
+
+                    <div className="login-wrapper d-none" id="register">
+                        <form onSubmit={handleRegister}>
+                            <h1 className="mb-4 loginText">Registrar</h1>
+                            <label className="mb-3">
+                                <p className="mb-1 loginText">Nome</p>
+                                <input className="w-100" type="name" placeholder="Digite seu nome"
+                                    onChange={(e) => setUserName(e.target.value)} />
+                            </label>
+                            <label className="mb-3">
+                                <p className="mb-1 loginText">Email</p>
+                                <input className="w-100" type="email" placeholder="Endereço de email"
+                                    onChange={(e) => setEmail(e.target.value)} />
+                            </label>
+                            <label className="mb-3">
+                                <p className="mb-1 loginText">Senha</p>
+                                <input className="w-100" type="password" placeholder="Criar senha"
+                                    onChange={(e) => setPassword(e.target.value)} />
+                            </label>
+
                             <button type="button" onClick={e => changeDisplay(e)}>Voltar</button>
-                        </div>
-                    </form>
+                            <button className="submit" type="submit">Registrar</button>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-        )
-    }
+            <div class="image">
+                <img src={terry} alt="" />
+            </div>
+        </div>
+    )
+}
 
 
 Login.propTypes = {
