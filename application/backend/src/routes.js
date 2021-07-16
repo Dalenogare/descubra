@@ -14,6 +14,7 @@ routes.delete('/users/:id/', UserController.delete);
 routes.post('/users/:user_id/establishment', EstablishmentController.store)
 routes.get('/users/:user_id/establishment', EstablishmentController.userEstablishment)
 routes.get('/establishments', EstablishmentController.index)
+routes.get('/users/:email/', UserController.indexByEmail);
 
 routes.post('/establishments/:establishment_id/items', ItemController.store)
 routes.get('/establishments/:establishment_id/items', ItemController.establishmentItems)

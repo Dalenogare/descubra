@@ -11,6 +11,7 @@ export default props =>
             <NavItem navigateTo="/mail" faClass="envelope-o" name="Contato"/>
             <div className="footerButton">
                 <NavItem navigateTo="" faClass="sign-out" name="Sair"/>        
+                {/* <button type="button"className="fa fa-sign-out" onClick={e => console.log(props.token)}>Sair</button>         */}
             </div>      
         </nav>
     </aside>
