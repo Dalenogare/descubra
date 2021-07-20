@@ -5,6 +5,7 @@ import Home from '../components/home/Home'
 import UserCrud from '../components/user/UserCrud'
 import MailMessage from '../components/mail/MailMessage'
 import Login from '../components/login/Login'
+import Register from '../components/login/Register'
 
 export default props =>
     <Switch>
@@ -12,5 +13,6 @@ export default props =>
         <Route path='/users' component={UserCrud} />
         <Route path='/mail' component={MailMessage} />
         <Route path='/login' component={Login} />
+        <Route exact path='/register' component={Register} />
         <Redirect from='*' to='/' />
     </Switch>
