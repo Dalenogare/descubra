@@ -12,7 +12,5 @@ export default props =>
         <Route exact path='/' component={Home} />
         <Route path='/users' component={UserCrud} />
         <Route path='/mail' component={MailMessage} />
-        <Route path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
         <Redirect from='*' to='/' />
     </Switch>

@@ -25,7 +25,7 @@ function App() {
 
     if (!token) {
         return (
-            <div className="page">
+            <div className="page " style={{height: "100vh"}}>
                 {register ? (
                     <Register setRegister={setRegister} />
                 ) : (

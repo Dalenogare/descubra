@@ -27,27 +27,14 @@ aside.menu-area {
     align-items: center;
 }
 
-#footButton {
-    background-color: transparent;
-    text-align: left;
-    height: 54px;
-    width: 225px;
-    margin-top: 0px;
-    text-decoration: none;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-
-#footButton:hover {
-    background-color: transparent;
-    color: #fff;
-}
-
 .footerButton:hover {
     background: linear-gradient(135deg, #014a64 0%, #1306ce 100%);
+    cursor: pointer;
 }
 
+#footerBtn {
+    width: 100%;
+}
 
 
 @media(max-width: 768px) {
