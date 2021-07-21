@@ -17,14 +17,13 @@ renderForm() {
             <input type='hidden' name='_subject' value='Contato de Cliente'></input>
             <input type='email' name='_replyto' placeholder='Email p/ contato'></input>
             <textarea name='mensagem'></textarea>
-            <button type='submit'>Enviar</button>
+            <button type='submit'>Enviar email</button>
         </form>
 
     )
         
 }
     
-
 render() {
     return (
         <Main {...headerProps}>
