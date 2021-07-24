@@ -3,11 +3,10 @@ import './Login.css';
 import PropTypes from 'prop-types';
 import axios from 'axios'
 import terry from '../../assets/imgs/terry.png'
-import Register from './Register'
 export default function Login({ setToken, setRegister }) {
 
-    async function loginUser(credentials) {
-        const login = await axios.post('http://localhost:3333/login', credentials)
+    async function loginUser(user) {
+        const login = await axios.post('/login', user)
             .then(resp => resp.data)
         return login
     }
@@ -31,10 +30,12 @@ export default function Login({ setToken, setRegister }) {
 
         else {
             e.preventDefault();
-            const token = await loginUser({
-                email,
-                password
-            });
+            // const token = await loginUser({
+            //     user
+            // });
+            const token = {
+                token: `${user.id}`
+            }
             setToken(token);
             alert('Login efetuado com sucesso')
         }
@@ -61,8 +62,8 @@ export default function Login({ setToken, setRegister }) {
                                 <input className="w-100" type="password" placeholder="Digite sua senha"
                                     onChange={(e) => setPassword(e.target.value)} />
                             </label>
-                            <button className="loginRegisterButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => changeDisplay(e)}>Registrar</button>
-                            <button className="loginRegisterButton p-2 mt-1 mr-2 float-right text-align-center" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
+                            <button className="blackButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => changeDisplay(e)}>Registrar</button>
+                            <button className="blackButton p-2 mt-1 mr-2 float-right text-align-center" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
                         </form>
                     </div>
                 </div>

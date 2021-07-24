@@ -9,10 +9,6 @@ const initialState = {
 }
 
 
-// const changeDisplay = e => {
-//     setRegister(false)
-// }
-
 export default class Register extends Component {
 
     changeDisplay(e) {
@@ -66,8 +62,8 @@ export default class Register extends Component {
                                         type="password" onChange={e => this.updateField(e)} />
                                 </label>
 
-                                <button className="loginRegisterButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => this.changeDisplay(e)}>Voltar</button>
-                                <button className="loginRegisterButton p-2 mt-1 mr-2 float-right text-align-center" onClick={e => this.save(e)}>Registrar</button>
+                                <button className="blackButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => this.changeDisplay(e)}>Voltar</button>
+                                <button className="blackButton p-2 mt-1 mr-2 float-right text-align-center" onClick={e => this.save(e)}>Registrar</button>
 
                             </form>
                         </div>

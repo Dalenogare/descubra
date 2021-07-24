@@ -8,7 +8,8 @@ class Establishment extends Model {
             zipcode: DataTypes.STRING,
             state: DataTypes.STRING,
             street: DataTypes.STRING,
-            number: DataTypes.STRING           
+            number: DataTypes.STRING,
+            type: DataTypes.STRING
         }, {
             sequelize
         })
