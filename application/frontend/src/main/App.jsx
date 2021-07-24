@@ -38,7 +38,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            <div className="app">
+            <div className="app anim">
                 <Logo />
                 <Nav />
                 <Routes />

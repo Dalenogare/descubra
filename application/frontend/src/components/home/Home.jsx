@@ -9,4 +9,5 @@ export default props =>
         <hr />
         <p className="mb-0">Sistema para exemplificar a consrução
             de um cadastro desenvolvido em React!</p>
+
     </Main>

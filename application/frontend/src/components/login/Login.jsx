@@ -61,8 +61,8 @@ export default function Login({ setToken, setRegister }) {
                                 <input className="w-100" type="password" placeholder="Digite sua senha"
                                     onChange={(e) => setPassword(e.target.value)} />
                             </label>
-                            <button className="p-2 mt-1 float-right text-align-center" type="button" onClick={e => changeDisplay(e)}>Registrar</button>
-                            <button className="p-2 mt-1 mr-2 float-right text-align-center" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
+                            <button className="loginRegisterButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => changeDisplay(e)}>Registrar</button>
+                            <button className="loginRegisterButton p-2 mt-1 mr-2 float-right text-align-center" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
                         </form>
                     </div>
                 </div>
