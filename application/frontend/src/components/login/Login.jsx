@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css';
+import '../../main/Forms.css';
 import PropTypes from 'prop-types';
 import axios from 'axios'
 import terry from '../../assets/imgs/terry.png'
@@ -46,8 +46,8 @@ export default function Login({ setToken, setRegister }) {
     }
 
     return (
-        <div class="page anim w-100">
-            <div class="d-flex flex-column w-75 justify-content-center align-items-center">
+        <div className="page anim w-100">
+            <div className="d-flex flex-column w-75 justify-content-center align-items-center">
                 <div className="wrapper anim w-55" id="test">
                     <div className="anim d-flex justify-content-center align-items-center overflow-hidden">
                         <form>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Login.css';
+import '../../main/Forms.css';
 import axios from 'axios'
 import terry from '../../assets/imgs/terry.png'
 

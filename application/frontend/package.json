@@ -42,7 +42,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3333",
+  "proxy": [
+    "http://localhost:3333",
+    "https://viacep.com.br/"
+  ],
   "devDependencies": {
     "http-proxy-middleware": "^2.0.0"
   }
