@@ -1,7 +1,6 @@
 import './Nav.css'
 import NavItem from './NavItem.jsx'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function logOut() {
     sessionStorage.removeItem('token')

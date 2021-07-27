@@ -30,7 +30,7 @@ module.exports = {
 
     async store(req, res) {
         const { user_id } = req.params;
-        const { register_number, name, zipcode, state, street, number, type } = req.body;
+        const { register_number, name, zipcode, state, city, street, number, type } = req.body;
         
         const user = await User.findByPk(user_id)
 
@@ -54,6 +54,7 @@ module.exports = {
             name, 
             zipcode,
             state, 
+            city,
             street, 
             number,
             type,

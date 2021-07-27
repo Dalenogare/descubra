@@ -8,12 +8,11 @@ const app = express()
 
 app.use(express.json());
 app.use(routes);
-app.use(cors())
+
+app.use((req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  app.use(cors());
+})
+  
 
 app.listen(3333);
-
-app.use('/login', (req, res) => {
-    res.send({
-      token: 'test123'
-    });
-  });

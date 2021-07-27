@@ -5,11 +5,6 @@ import axios from 'axios'
 import terry from '../../assets/imgs/terry.png'
 export default function Login({ setToken, setRegister }) {
 
-    async function loginUser(user) {
-        const login = await axios.post('/login', user)
-            .then(resp => resp.data)
-        return login
-    }
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -30,9 +25,6 @@ export default function Login({ setToken, setRegister }) {
 
         else {
             e.preventDefault();
-            // const token = await loginUser({
-            //     user
-            // });
             const token = {
                 token: `${user.id}`
             }

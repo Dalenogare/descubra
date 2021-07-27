@@ -39,8 +39,8 @@ export default class Register extends Component {
 
     render() {
         return (
-            <div class="page anim w-100">
-                <div class="d-flex flex-column w-75 justify-content-center align-items-center">
+            <div className="page anim w-100">
+                <div className="d-flex flex-column w-75 justify-content-center align-items-center">
                     <div className="wrapper anim w-55" id="test">
                         <div className="anim d-flex justify-content-center
                         align-items-center overflow-hidden">
