@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../../main/Forms.css';
 import axios from 'axios'
-import terry from '../../assets/imgs/terry.png'
 
 
 const initialState = {
@@ -40,7 +39,7 @@ export default class Register extends Component {
     render() {
         return (
             <div className="page anim w-100">
-                <div className="d-flex flex-column w-75 justify-content-center align-items-center">
+                <div className="d-flex flex-column col-xl-9 justify-content-center align-items-center">
                     <div className="wrapper anim w-55" id="test">
                         <div className="anim d-flex justify-content-center
                         align-items-center overflow-hidden">
@@ -69,8 +68,8 @@ export default class Register extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="image">
-                    <img src={terry} alt="" className="w-100 h-100 float-right"/>
+                <div className="image col-xl-3">
+                    
                 </div>
             </div>
         )

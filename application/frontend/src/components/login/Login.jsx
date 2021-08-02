@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../main/Forms.css';
 import PropTypes from 'prop-types';
 import axios from 'axios'
-import terry from '../../assets/imgs/terry.png'
+
 export default function Login({ setToken, setRegister }) {
 
 
@@ -39,7 +39,7 @@ export default function Login({ setToken, setRegister }) {
 
     return (
         <div className="page anim w-100">
-            <div className="d-flex flex-column w-75 justify-content-center align-items-center">
+            <div className="d-flex flex-column col-xl-9 justify-content-center align-items-center">
                 <div className="wrapper anim w-55" id="test">
                     <div className="anim d-flex justify-content-center align-items-center overflow-hidden">
                         <form>
@@ -60,8 +60,8 @@ export default function Login({ setToken, setRegister }) {
                     </div>
                 </div>
             </div>
-            <div className="image">
-                <img src={terry} alt="" className="w-100 h-100 float-right"/>
+            <div className="image col-xl-3">
+                teste
             </div>
         </div>
     )
