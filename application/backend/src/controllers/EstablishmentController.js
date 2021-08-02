@@ -25,7 +25,7 @@ module.exports = {
             return res.status(400).json({ error: 'User not found' });
         }
 
-        return res.json(user.establishment);
+        return res.json(user);
     },
 
     async store(req, res) {
