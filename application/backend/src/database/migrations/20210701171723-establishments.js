@@ -32,12 +32,20 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       street: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       number: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      type: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       created_at: {

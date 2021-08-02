@@ -51,6 +51,7 @@ aside.menu-area {
 
 main.content {
     grid-area: content;
+    max-height: 791px;
 }
 
 footer.footer {

@@ -20,15 +20,17 @@ module.exports = {
                 return res.json("Este usuário não possui estabelecimento");       
             }    
         }
+
         else {
             return res.status(400).json({ error: 'User not found' });
         }
-        return res.json(user.establishment);
+
+        return res.json(user);
     },
 
     async store(req, res) {
         const { user_id } = req.params;
-        const { register_number, name, zipcode, state, street, number } = req.body;
+        const { register_number, name, zipcode, state, city, street, number, type } = req.body;
         
         const user = await User.findByPk(user_id)
 
@@ -52,8 +54,10 @@ module.exports = {
             name, 
             zipcode,
             state, 
+            city,
             street, 
             number,
+            type,
             user_id
         });
 

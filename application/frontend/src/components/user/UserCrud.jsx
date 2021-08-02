@@ -148,7 +148,7 @@ export default class UserCrud extends Component {
     renderRows() {
         return this.state.list.map(user => {
             return (
-                <tr classaName="table mt-4" key={user.id} >
+                <tr className="table mt-4" key={user.id} >
                     <td>{user.id}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>

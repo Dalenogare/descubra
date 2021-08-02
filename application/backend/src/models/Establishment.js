@@ -7,8 +7,10 @@ class Establishment extends Model {
             name: DataTypes.STRING,
             zipcode: DataTypes.STRING,
             state: DataTypes.STRING,
+            city: DataTypes.STRING,
             street: DataTypes.STRING,
-            number: DataTypes.STRING           
+            number: DataTypes.STRING,
+            type: DataTypes.STRING
         }, {
             sequelize
         })

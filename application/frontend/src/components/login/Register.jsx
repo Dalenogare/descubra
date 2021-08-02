@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Login.css';
+import '../../main/Forms.css';
 import axios from 'axios'
 import terry from '../../assets/imgs/terry.png'
 
@@ -8,10 +8,6 @@ const initialState = {
     user: { name: '', email: '', password: '' },
 }
 
-
-// const changeDisplay = e => {
-//     setRegister(false)
-// }
 
 export default class Register extends Component {
 
@@ -43,8 +39,8 @@ export default class Register extends Component {
 
     render() {
         return (
-            <div class="page anim w-100">
-                <div class="d-flex flex-column w-75 justify-content-center align-items-center">
+            <div className="page anim w-100">
+                <div className="d-flex flex-column w-75 justify-content-center align-items-center">
                     <div className="wrapper anim w-55" id="test">
                         <div className="anim d-flex justify-content-center
                         align-items-center overflow-hidden">
@@ -66,8 +62,8 @@ export default class Register extends Component {
                                         type="password" onChange={e => this.updateField(e)} />
                                 </label>
 
-                                <button className="loginRegisterButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => this.changeDisplay(e)}>Voltar</button>
-                                <button className="loginRegisterButton p-2 mt-1 mr-2 float-right text-align-center" onClick={e => this.save(e)}>Registrar</button>
+                                <button className="blackButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => this.changeDisplay(e)}>Voltar</button>
+                                <button className="blackButton p-2 mt-1 mr-2 float-right text-align-center" onClick={e => this.save(e)}>Registrar</button>
 
                             </form>
                         </div>

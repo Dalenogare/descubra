@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-import './Login.css';
+import '../../main/Forms.css';
 import PropTypes from 'prop-types';
 import axios from 'axios'
 import terry from '../../assets/imgs/terry.png'
-import Register from './Register'
 export default function Login({ setToken, setRegister }) {
 
-    async function loginUser(credentials) {
-        const login = await axios.post('http://localhost:3333/login', credentials)
-            .then(resp => resp.data)
-        return login
-    }
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -31,10 +25,9 @@ export default function Login({ setToken, setRegister }) {
 
         else {
             e.preventDefault();
-            const token = await loginUser({
-                email,
-                password
-            });
+            const token = {
+                token: `${user.id}`
+            }
             setToken(token);
             alert('Login efetuado com sucesso')
         }
@@ -45,8 +38,8 @@ export default function Login({ setToken, setRegister }) {
     }
 
     return (
-        <div class="page anim w-100">
-            <div class="d-flex flex-column w-75 justify-content-center align-items-center">
+        <div className="page anim w-100">
+            <div className="d-flex flex-column w-75 justify-content-center align-items-center">
                 <div className="wrapper anim w-55" id="test">
                     <div className="anim d-flex justify-content-center align-items-center overflow-hidden">
                         <form>
@@ -61,8 +54,8 @@ export default function Login({ setToken, setRegister }) {
                                 <input className="w-100" type="password" placeholder="Digite sua senha"
                                     onChange={(e) => setPassword(e.target.value)} />
                             </label>
-                            <button className="loginRegisterButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => changeDisplay(e)}>Registrar</button>
-                            <button className="loginRegisterButton p-2 mt-1 mr-2 float-right text-align-center" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
+                            <button className="blackButton p-2 mt-1 float-right text-align-center" type="button" onClick={e => changeDisplay(e)}>Registrar</button>
+                            <button className="blackButton p-2 mt-1 mr-2 float-right text-align-center" type="button" onClick={e => handleSubmit(e)}>Entrar</button>
                         </form>
                     </div>
                 </div>
